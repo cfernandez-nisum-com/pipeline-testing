@@ -1,4 +1,5 @@
 import org.junit.Test;
+package Test
  
 public class ExampleTest {
  
