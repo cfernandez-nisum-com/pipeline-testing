@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/gradle
 
 ### Gradle ###
-.gradle
+.gradle/
 **/build/
 
 # Ignore Gradle GUI config
