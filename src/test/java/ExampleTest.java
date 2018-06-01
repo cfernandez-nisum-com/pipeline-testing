@@ -1,5 +1,6 @@
+package testing;
+
 import org.junit.Test;
-package java
  
 public class ExampleTest {
  
