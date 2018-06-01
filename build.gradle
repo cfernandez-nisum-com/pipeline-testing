@@ -30,7 +30,7 @@ repositories {
     jcenter()
     mavenCentral()
 }
-
+/*
 artifactory {
     contextUrl = "${artifactory_contextUrl}"
     publish {
@@ -45,14 +45,23 @@ artifactory {
         }
     }
 }
-
 publishing {
         publications {
             mavenJava(MavenPublication) {
                 artifact shadowJar
                 groupId 'sample2'
                 version '1.0'
-                from components.java
+                //from components.java
                 }
             }
         }
+        */
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'hello.HelloWorld'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+fatJar.dependsOn. build
